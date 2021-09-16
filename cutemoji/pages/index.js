@@ -1,17 +1,17 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-
+import SearchBar from './components/SearchBar'
 import useSWR from "swr";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export default function Home() {
-    const { data, error } = useSWR(
+  const { data, error } = useSWR(
     "https://api.github.com/emojis",
     fetcher
-    );
-  
+  );
+
   if (error) return "An error has occurred.";
   if (!data) return "Loading...";
 
@@ -27,20 +27,10 @@ export default function Home() {
         <h1 className={styles.title}>
           CuteMoji
         </h1>
-        <img src={ data.octopus }/>
+        <img src={data.octopus} />
 
-         {/* search bar */}
-        <div class="p-8">
-          <div class="bg-white flex items-center rounded-full shadow-xl">
-            <input class="rounded-l-full w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none" id="search" type="text" placeholder="Search" />
-
-            <div class="p-4">
-              <button class="bg-red-400 text-white rounded-full p-2 hover:bg-red-300 focus:outline-none w-12 h-12 flex items-center justify-center">
-                +
-              </button>
-            </div>
-          </div>
-        </div>
+        {/* search bar */}
+        <SearchBar />
         {/* end of search bar */}
       </main>
     </div>
