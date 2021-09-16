@@ -28,10 +28,7 @@ export default function Home() {
           CuteMoji
         </h1>
         <img src={data.octopus} />
-
-        {/* search bar */}
-        <SearchBar />
-        {/* end of search bar */}
+        <SearchBar apiData={data} />
       </main>
     </div>
   )
