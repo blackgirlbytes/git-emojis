@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import SearchBar from './components/SearchBar'
 import useSWR from "swr";
@@ -14,7 +13,7 @@ export default function Home() {
 
   if (error) return "An error has occurred.";
   if (!data) return "Loading...";
-
+  const formattedData = Object.entries(data).map((entry) => ( { emoji_name: entry[0], emoji_url: entry[1] } ));
   return (
     <div className={styles.container}>
       <Head>
@@ -28,7 +27,7 @@ export default function Home() {
           CuteMoji
         </h1>
         <img src={data.octopus} />
-        <SearchBar apiData={data} />
+        <SearchBar apiData={formattedData} />
       </main>
     </div>
   )
