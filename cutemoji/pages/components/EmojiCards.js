@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const EmojiCards = ({ emojiResult }) => {
-
     function addDefaultSrc(ev) {
         console.log(ev.target)
         ev.target.src = 'https://thumbs.dreamstime.com/b/vector-oops-symbol-over-white-29840798.jpg'

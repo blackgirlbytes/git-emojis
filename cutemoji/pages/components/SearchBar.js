@@ -6,7 +6,7 @@ const SearchBar = ({ setQuery, query }) => {
         setQuery(value);
     }
     return (
-        <div class="p-8"  >
+        <div class="p-8">
             <div class="bg-white flex items-center rounded-full shadow-xl">
                 <input name="search"
                     type="search"
