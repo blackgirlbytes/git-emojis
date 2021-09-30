@@ -17,7 +17,7 @@ const SearchWithEmojiCards = ({ apiData }) => {
     const emojiResult = query ? results.map(result => result.item) : apiData;
 
     return (
-        <div class="w-3/6">
+        <div className="w-3/6">
             <SearchBar query={query} setQuery={setQuery} />
             <EmojiCards emojiResult={emojiResult} />
         </div>

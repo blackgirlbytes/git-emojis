@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "next build && next export"
   },
   "dependencies": {
     "fuse.js": "^6.4.6",
@@ -20,6 +21,7 @@
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2",
     "postcss": "^8.3.6",
+    "postcss-preset-env": "^6.7.0",
     "swr": "^1.0.1",
     "tailwindcss": "^2.2.15"
   }
