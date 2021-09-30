@@ -9,7 +9,7 @@ jobs:
     - uses: docker://pulumi/pulumify
     - name: Create build
       working-directory: ./cutemoji
-      run: next build && next export
+      run: npm run export
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
