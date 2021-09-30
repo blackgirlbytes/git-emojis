@@ -1,12 +1,16 @@
 name: Pulumify
 on: [pull_request, delete]
 jobs:
-  Install and Build:
+  my_build:
     runs-on: ubuntu-latest
-    name: install npm
     steps:
-    - uses: actions/checkout@v2
-    run: |
+      - name: Checking out our code
+      uses: actions/checkout@master
+      - name: Say something
+      run: |
+      pwd
       cd ./cutemoji
+      pwd
       npm install
+      pwd
       npm run export
