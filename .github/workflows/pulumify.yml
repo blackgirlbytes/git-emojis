@@ -2,11 +2,11 @@ name: Pulumify
 on: [pull_request, delete]
 jobs:
   updateLivePreview:
-    name: Install npm
-    working-directory: ./cutemoji
+    - name: Install npm
+      working-directory: ./cutemoji
       run: npm install
-    name: Run build
-    workin-directory: ./cutemoji
+    - name: Run build
+      workin-directory: ./cutemoji
       run: npm run export
     name: Update Live Preview
     runs-on: ubuntu-latest
