@@ -7,7 +7,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - uses: docker://pulumi/pulumify
-    - run: npm run export
+    - name: Create build
+      working-directory: ./cutemoji
+      run: next build && next export
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
