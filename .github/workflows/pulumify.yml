@@ -7,10 +7,10 @@ jobs:
       - name: Checking out our code
         uses: actions/checkout@master
       - name: Say something
-      run: |
-      pwd
-      cd ./cutemoji
-      pwd
-      npm install
-      pwd
-      npm run export
+        run: |
+          pwd
+          cd ./cutemoji
+          pwd
+          npm install
+          pwd
+          npm run export
