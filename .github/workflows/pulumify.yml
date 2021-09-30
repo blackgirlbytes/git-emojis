@@ -2,17 +2,16 @@ name: Pulumify
 on: [pull_request, delete]
 jobs:
   updateLivePreview:
+    name: Install npm
+      working-directory: ./cutemoji
+      run: npm install
+    name: Run build
+      workin-directory: npm run export
     name: Update Live Preview
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - uses: docker://pulumi/pulumify
-    - name: Install npm
-      working-directory: ./cutemoji
-      run: npm install
-    - name : Run build
-      working-directory: ./cutemoji
-      run: npm run export
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
