@@ -3,10 +3,11 @@ on: [pull_request, delete]
 jobs:
   updateLivePreview:
     name: Install npm
-      working-directory: ./cutemoji
+    working-directory: ./cutemoji
       run: npm install
     name: Run build
-      workin-directory: npm run export
+    workin-directory: ./cutemoji
+      run: npm run export
     name: Update Live Preview
     runs-on: ubuntu-latest
     steps:
