@@ -1,7 +1,7 @@
 name: Pulumify
 on: [pull_request, delete]
 jobs:
-  my_build:
+  previewSite:
     runs-on: ubuntu-latest
     steps:
       - name: Checking out our code
