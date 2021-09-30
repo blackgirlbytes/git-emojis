@@ -8,10 +8,11 @@ jobs:
     - uses: actions/checkout@v2
     - uses: docker://pulumi/pulumify
     - name: Install npm
-      working-directory: ./cutemoji
+      uses: ./cutemoji
       run: npm install
     - name : Run build
-      run: npm export
+      uses: ./cutemoji
+      run: npm run export
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
