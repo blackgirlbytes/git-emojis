@@ -5,9 +5,9 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [ github-pages-cutemoji ]
   pull_request:
-    branches: [ main ]
+    branches: [ github-pages-cutemoji ]
 
 jobs:
   build:
@@ -16,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12.x, 14.x, 16.x]
+        node-version: [14.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -26,10 +26,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-        run: |
-          cd ./cutemoji
-          npm ci
-          npm run build
-          npm run export
-          pwd
+    - run: npm ci
+    - run: npm run build 
+    - run: npm export
 
