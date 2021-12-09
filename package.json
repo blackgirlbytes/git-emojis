@@ -2,6 +2,7 @@
   "name": "git-emojis",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://blackgirlbbytes.github.io/git-emojis/",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
