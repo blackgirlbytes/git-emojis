@@ -1,3 +1,0 @@
-name: git-emojis
-runtime: nodejs
-description: utilizing githubs emoji api to build a demo app
